@@ -34,7 +34,6 @@ pipeline {
                     git([url:'https://github.com/Guillaume-Jaouen/reactNodeExpressApp', credentialsId: 'guillaume', branch: 'release'])
                     sh 'git checkout origin/release'
                     sh 'git merge origin/dev'
-                    sh 'git commit -m "Merged dev branch to release'
                     sh "git push origin release"
             }
         }
