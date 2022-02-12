@@ -27,11 +27,12 @@ pipeline {
                 //sh "docker-compose down"
             }
         }
-        stage('pushing into git'){
+        stage('Pushing into git'){
             steps {
                     sh 'git config --global user.email "guillaume.jaouen@efrei.net"'
                     sh 'git config --global user.name "Guillaume-Jaouen"'
-                    sh "git push origin release"
+                    sh "git checkout release"
+                    sh 'git merge origin/dev'
             }
         }
 
