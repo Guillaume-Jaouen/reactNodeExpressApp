@@ -32,7 +32,8 @@ pipeline {
                     sh 'git config --global user.email "guillaume.jaouen@efrei.net"'
                     sh 'git config --global user.name "Guillaume-Jaouen"'
                     git([url:'https://github.com/Guillaume-Jaouen/reactNodeExpressApp', credentialsId: 'guillaume', branch: 'release'])
-                    sh 'git merge dev'
+                    sh 'git checkout origin/release'
+                    sh 'git merge origin/dev'
                     sh 'git commit -m "Merged dev branch to release'
                     sh "git push origin release"
             }
