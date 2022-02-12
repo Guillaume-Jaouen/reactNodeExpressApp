@@ -33,6 +33,7 @@ pipeline {
                     sh 'git config --global user.name "Guillaume-Jaouen"'
                     sh "git checkout release"
                     sh 'git merge origin/dev'
+                    sh 'git push origin release'
             }
         }
 
